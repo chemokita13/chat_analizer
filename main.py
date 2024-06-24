@@ -11,6 +11,5 @@ def hello():
 @app.post("/")
 async def chat(data: dict):
     text = base64.b64decode(data["text"]).decode("utf-8")
-    print(text)
     returner = analyze_chat(text)
     return returner
